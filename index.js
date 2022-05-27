@@ -109,8 +109,16 @@ inquirer
     
     (err) => (err ? console.error(err) : console.log("Your README has been successfully generated.")))
 });
-// TODO: Create a function to write README file
 
+// TODO: Create a function to write README file
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, err => {
+        if (err) {
+            return console.log(err);
+        }
+        console.log('Your markdown file has been created.')
+    });
+}
 
 // TODO: Create a function to initialize app
 function licenseId(license) {
