@@ -3,10 +3,9 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 let sourceImg = '';
 let license = '';
-// const util = require('util');
 
 const generateMarkdown = require('./utils/generateMarkdown');
-// TODO: Create an array of questions for user input
+
 inquirer
     .prompt([
     { 
@@ -110,17 +109,7 @@ inquirer
     (err) => (err ? console.error(err) : console.log("Your README has been successfully generated.")))
 });
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, err => {
-        if (err) {
-            return console.log(err);
-        }
-        console.log('Your markdown file has been created.')
-    });
-}
 
-// TODO: Create a function to initialize app
 function licenseId(license) {
     if (licenseId === 'MIT') {
         sourceImg = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
@@ -130,7 +119,4 @@ function licenseId(license) {
         sourceImg = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)'
     }
 }
-
-// Function call to initialize app
-// init();
 
